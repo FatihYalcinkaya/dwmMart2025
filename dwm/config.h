@@ -84,6 +84,7 @@ static const char *upvol[] = {"/usr/bin/pactl", "set-sink-volume","@DEFAULT_SINK
 
 static const Key keys[] = {
 
+    { MODKEY|ShiftMask, XK_d, spawn, SHCMD("rofi -show power-menu -modi power-menu:rofi-power-menu") },
     {0, XF86XK_AudioPlay, spawn, {.v = medplaypausecmd}},
     {0, XF86XK_AudioNext, spawn, {.v = mednextcmd}},
     {0, XF86XK_AudioPrev, spawn, {.v = medprevcmd}},
