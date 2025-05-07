@@ -3,7 +3,7 @@
 bash /home/fatih/.screenlayout/screenlayout.sh
 
 xfce4-clipman &
-dunst &
+xfce4-notifyd &
 slstatus &
 picom &
 blueman &
