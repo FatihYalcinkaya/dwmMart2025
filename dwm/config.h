@@ -80,6 +80,8 @@ static const char *brightnessDown[] = {"brightnessctl", "set", "10%-", "NULL"};
 static const char *mutevol[] = {"/usr/bin/pactl", "set-sink-mute","@DEFAULT_SINK@", "toggle", NULL};
 static const char *downvol[] = {"/usr/bin/pactl", "set-sink-volume","@DEFAULT_SINK@", "-5%", NULL};
 static const char *upvol[] = {"/usr/bin/pactl", "set-sink-volume","@DEFAULT_SINK@", "+5%", NULL};
+static const char scratchpadname[] = "scratchpad";
+static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
 
 
 static const Key keys[] = {
@@ -117,6 +119,8 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
   { MODKEY|ShiftMask,             XK_t,      spawn,          SHCMD("thunar")},
   { MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("firefox")},
+  { MODKEY|ShiftMask,             XK_p,  togglescratch,  {.v = scratchpadcmd } },
+
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
